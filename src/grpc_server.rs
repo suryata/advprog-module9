@@ -91,8 +91,7 @@ impl ChatService for MyChatService{
                 println!("Received message: {:?}", message);
                 let reply = ChatMessage{
                     user_id : message.user_id.clone(),
-                    message: format!("Terima kasih telah melakukan chat kepada CS virtual,
-                    Pesan anda akan dibalas pada jam kerja. pesan anda: {}", message.message),
+                    message: format!("Terima kasih telah melakukan chat kepada CS virtual, Pesan anda akan dibalas pada jam kerja. pesan anda: {}", message.message),
                 };
 
                 tx.send(Ok(reply)).await.unwrap_or_else(|_| {});
